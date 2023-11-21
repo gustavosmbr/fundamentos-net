@@ -10,7 +10,7 @@ Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
                   "Digite o preço inicial:");
 precoInicial = Convert.ToDecimal(Console.ReadLine());
 
-Console.WriteLine("Agora digite o preço por hora:");
+Console.WriteLine("Agora digite o preço por hora adicional:");
 precoPorHora = Convert.ToDecimal(Console.ReadLine());
 
 // Instancia a classe Estacionamento, já com os valores obtidos anteriormente
@@ -27,7 +27,9 @@ while (exibirMenu)
     Console.WriteLine("1 - Cadastrar veículo");
     Console.WriteLine("2 - Remover veículo");
     Console.WriteLine("3 - Listar veículos");
-    Console.WriteLine("4 - Encerrar");
+    Console.WriteLine("4 - Listar quantos veículos já passaram pelo estacionamento");
+    Console.WriteLine("5 - Apresenta o valor total do faturamento do estacionamento");
+    Console.WriteLine("6 - Encerrar");
 
     switch (Console.ReadLine())
     {
@@ -44,6 +46,14 @@ while (exibirMenu)
             break;
 
         case "4":
+            es.ListarVeiculosJaCadastrados();
+            break;
+
+        case "5":
+            es.MostraTotalFaturamento();
+            break;
+
+        case "6":
             exibirMenu = false;
             break;
 
